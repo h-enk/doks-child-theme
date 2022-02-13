@@ -6,3 +6,21 @@
 a {
     color: orange; 
 }
+
+h1 {
+    font-size: calc(1.1rem - );
+}
+
+.nothing {
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+    margin: calc(1.5rem - 1.5vw);
+    margin: calc(16rem - 1.5vmax); /* Controls vertical height within a div */
+}
+
+.headerfont {
+    position: absolute;
+    z-index: 100;
+    color: white;
+    text-align: center;
+    margin-top: calc(21% - 1.5vmin);
+}

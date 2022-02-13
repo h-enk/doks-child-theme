@@ -1,21 +1,35 @@
 {{ define "sidebar-prefooter" }}
 <section class="section section-sm">
-  <div class="container">
-    <div class="row justify-content-center text-center mt-lg-3">
+ 
+    <div class="row justify-content-center text-center mt-lg-3 bg-dark">
+
       
-      
-      <div class="container" style="display: grid; margin: 0 0 2rem 0;">
-        <div style="position: relative;">
           {{- $image := resources.GetMatch "limehouselizzy-large-1280x964.png" -}}
           {{ $resizeimage := $image.Fill "1200x500 TopRight"}}
           <img src="{{ $resizeimage.Permalink }}" alt="{{$resizeimage}}">
-          <div style="position: absolute; z-index: 100; top: 0; left: 0; padding: 25%;  justify-content: center; align-content: center; color: white; margin: 0 1rem 2rem; 0">
-            <h1>{{ .Title }}</h1>
-          </div>
+        
+        <div class="headerfont" style="position: absolute;
+        z-index: 100;
+        color: white;
+        text-align: center;
+        margin-top: calc(21% - 1.5vmin);">
+          <h1>{{ .Title }}</h1>
+          <h3>The best live music venue in Watford</h3>
+          <span style="color: white; font-size: 5rem;"><sup>♬</sup>♬<sub>♩</sub><sub>♩</sub><sup>♩</sup><sup>♬</sup></span>
         </div>
-      </div>  
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque veniam aliquam voluptatum nulla eos, reprehenderit mollitia pariatur cupiditate necessitatibus consequatur, dolore corrupti delectus deleniti aliquid sint quasi velit molestiae cumque? Consectetur illum, iusto quia cupiditate, aut quas accusantium ipsa quasi sed eos non magni earum incidunt laborum quis amet quisquam nulla? Voluptate error consequuntur cupiditate assumenda distinctio adipisci voluptates? Quidem amet illum cumque quam cum molestiae fuga eaque minus, sapiente sint numquam delectus corporis quos non iusto sequi hic vitae omnis officia enim, atque quae! Quis harum iusto natus, sequi excepturi esse vel nostrum id veniam aspernatur fuga nisi voluptatem hic pariatur aut, velit tempore distinctio accusantium consequuntur unde itaque numquam. Sed nobis eum, porro saepe reiciendis mollitia eaque cumque culpa itaque consequatur ab enim modi officia assumenda ea odit perferendis. Autem necessitatibus sed iste voluptates quaerat ducimus deleniti commodi quod rem. Est fuga incidunt quod omnis aperiam voluptates illo, rerum eligendi qui? Impedit dolorem quod consectetur dicta quasi. Molestiae saepe quo perspiciatis expedita laborum qui, molestias pariatur voluptate itaque nam earum error quae odio culpa mollitia beatae quam dolorem, officiis iusto nemo cum repudiandae! Facilis, soluta? Accusantium dicta assumenda, quasi rerum repellendus atque nobis quae commodi eum autem laudantium.
-    </div>  
+      </div>
+
+
+  <div class="row justify-content-center text-center mt-lg-3 bg-dark">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id tempora ducimus error temporibus alias adipisci voluptatem natus cum numquam velit!
+  </div>
+  <div class="row justify-content-center text-center mt-lg-3">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id tempora ducimus error temporibus alias adipisci voluptatem natus cum numquam velit!
+  </div>
+
+
+
+
     <div class="row justify-content-center text-center mt-lg-3">
       <div class="col-lg-5">
         <h2 class="h4">Full text search</h2>

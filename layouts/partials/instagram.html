@@ -1,0 +1,4 @@
+{{- $iimage := resources.GetMatch "instagram-transparent.max-1000x1000.png" -}}
+{{ $iresizeimage := $iimage.Resize "200x"}}
+<img src="{{ $iresizeimage.Permalink }}" alt="{{$iresizeimage}}">
+ 

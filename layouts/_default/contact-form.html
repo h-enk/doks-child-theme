@@ -1,0 +1,46 @@
+{{ define "sidebar-prefooter" }}
+
+<div class="container bg-light">
+    <div class="row justify-content-center text-center">
+        <div class="col">
+            <h1>{{ .Title }}</h1>
+        </div>
+        <div class="row bg-light">
+            <img src="cover.png" alt="">
+        </div>
+        
+        <div class="row bg-light p-3">
+            <div class="col">
+                <h3>{{ .Title}}</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Your Name.</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Your Email address.</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Type your message here.</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div> <!-- column End -->
+
+            <div class="col">
+                {{ .Content }}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{{ partialCached "footer_partial" .}}
+
+{{ end }}

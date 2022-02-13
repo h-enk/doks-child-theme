@@ -1,0 +1,55 @@
+{{ define "sidebar-prefooter" }}
+<section class="section section-sm"> 
+    <div class="row justify-content-center text-center mt-lg-3 bg-light">
+  {{$img := .Resources.GetMatch "cover.*"}}
+  {{ if $img }}
+  <img alt="{{.Title}}" width="1920" height="400"
+      loading="lazy"
+      src="{{$img.Permalink}}">
+  {{ end }}
+  {{with .Title}}
+    <h1>
+      {{.}}
+    </h1>
+  {{end}}
+
+---  
+<div class="row justify-content-center text-center mt-lg-3">
+   <form>
+    <div>
+      <label for="name">Name:</label>
+      <input name="name" type="text" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input name="email" type="email" required>
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea name="message" cols="50" rows="10"
+        required></textarea>
+    </div>
+    <div>
+      <button type="submit">Send</button>
+    </div>
+</form> 
+</div>
+
+         
+<div class="col-lg">
+    <span>{{ .Content }}</span>
+          
+        
+</div> 
+     
+
+
+</section>
+{{end}}
+
+
+{{ range .Pages.ByDate }}
+    
+<div class="col-lg">
+    
+{{ end }}

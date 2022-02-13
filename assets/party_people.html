@@ -1,0 +1,217 @@
+<!doctype html>
+
+
+
+<html class="no-js" lang="en-gb" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>Wagtail - Sign in</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+
+    <script src="/static/wagtailadmin/js/vendor/modernizr-2.6.2.min.js?v=538cff64"></script>
+
+    <link rel="stylesheet" href="/static/wagtailadmin/css/normalize.css?v=538cff64" />
+
+    
+    <link rel="stylesheet" href="/static/wagtailadmin/css/vendor/jquery-ui/jquery-ui-1.10.3.verdant.css?v=538cff64" />
+    <link rel="stylesheet" href="/static/wagtailadmin/css/vendor/jquery.tagit.css?v=538cff64">
+    <link rel="stylesheet" href="/static/wagtailadmin/css/core.css?v=538cff64" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/static/coderedcms/css/codered-admin.css"><link rel="stylesheet" href="/static/wagtailfontawesome/css/wagtailfontawesome.css">
+
+    
+    
+
+    <link rel="stylesheet" href="/static/wagtailadmin/css/layouts/login.css?v=538cff64" type="text/css" />
+
+
+
+    
+    <link rel="shortcut icon" href="/static/wagtailadmin/images/favicon.ico?v=538cff64" />
+
+</head>
+<body id="wagtail" class="login  focus-outline-on">
+    <div data-sprite></div>
+    <script>
+        function loadIconSprite() {
+            var spriteURL = '/admin/sprite-2074cbd1/';
+            var revisionKey = 'wagtail:spriteRevision';
+            var dataKey = 'wagtail:spriteData';
+            var isLocalStorage = 'localStorage' in window && typeof window.localStorage !== 'undefined';
+
+            var insertIt = function (data) {
+                var spriteContainer = document.body.querySelector('[data-sprite]');
+                spriteContainer.innerHTML = data;
+            }
+
+            var insert = function (data) {
+                if (document.body) {
+                    insertIt(data)
+                } else {
+                    document.addEventListener('DOMContentLoaded', insertIt.bind(null, data));
+                }
+            }
+
+            if (isLocalStorage && localStorage.getItem(revisionKey) === spriteURL) {
+                var data = localStorage.getItem(dataKey);
+                if (data) {
+                    insert(data);
+                    return true;
+                }
+            }
+
+            try {
+                var request = new XMLHttpRequest();
+                request.open('GET', spriteURL, true);
+                request.onload = function () {
+                    if (request.status >= 200 && request.status < 400) {
+                        data = request.responseText;
+                        insert(data);
+                        if (isLocalStorage) {
+                            localStorage.setItem(dataKey, data);
+                            localStorage.setItem(revisionKey, spriteURL);
+                        }
+                    }
+                }
+                request.send();
+            } catch (e) {
+                console.error(e);
+            }
+        }
+        loadIconSprite();
+    </script>
+
+    <!--[if lt IE 9]>
+        <p class="capabilitymessage">You are using an <strong>outdated</strong> browser not supported by this software. Please <a href="https://browsehappy.com/">upgrade your browser</a>.</p>
+    <![endif]-->
+    <noscript class="capabilitymessage">
+        
+            JavaScript is required to use Wagtail, but it is currently disabled.<br />
+            Here are the <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener noreferrer">instructions how to enable JavaScript in your web browser</a>.
+        
+    </noscript>
+
+    
+        <div data-ie11-warning hidden>
+            <div class="capabilitymessage">
+                Wagtail is gradually removing support for IE11, which may affect you or your organisation. <a href="https://docs.wagtail.io/en/stable/editor_manual/browser_issues.html#ie11">Learn more about our IE11 support plans</a>.
+            </div>
+        </div>
+    
+
+    
+    <script>
+        (function(document, window) {
+            window.wagtailConfig = window.wagtailConfig || {};
+            wagtailConfig.ADMIN_API = {
+                PAGES: '/admin/api/main/pages/',
+                DOCUMENTS: '/admin/api/main/documents/',
+                IMAGES: '/admin/api/main/images/',
+                
+                
+                EXTRA_CHILDREN_PARAMETERS: '',
+            };
+
+            
+            
+            wagtailConfig.I18N_ENABLED = false;
+            wagtailConfig.LOCALES = [{"code": "en-us", "display_name": "None"}];
+
+            wagtailConfig.STRINGS = {"DELETE": "Delete", "EDIT": "Edit", "PAGE": "Page", "PAGES": "Pages", "LOADING": "Loading\u2026", "NO_RESULTS": "No results", "SERVER_ERROR": "Server Error", "SEE_ALL": "See all", "CLOSE_EXPLORER": "Close explorer", "ALT_TEXT": "Alt text", "DECORATIVE_IMAGE": "Decorative image", "WRITE_HERE": "Write here\u2026", "HORIZONTAL_LINE": "Horizontal line", "LINE_BREAK": "Line break", "UNDO": "Undo", "REDO": "Redo", "RELOAD_PAGE": "Reload the page", "RELOAD_EDITOR": "Reload saved content", "SHOW_LATEST_CONTENT": "Show latest content", "SHOW_ERROR": "Show error", "EDITOR_CRASH": "The editor just crashed. Content has been reset to the last saved version.", "BROKEN_LINK": "Broken link", "MISSING_DOCUMENT": "Missing document", "CLOSE": "Close", "EDIT_PAGE": "Edit '{title}'", "VIEW_CHILD_PAGES_OF_PAGE": "View child pages of '{title}'", "PAGE_EXPLORER": "Page explorer", "SAVE": "Save", "SAVING": "Saving...", "CANCEL": "Cancel", "DELETING": "Deleting...", "ADD_A_COMMENT": "Add a comment", "SHOW_COMMENTS": "Show comments", "REPLY": "Reply", "RESOLVE": "Resolve", "RETRY": "Retry", "DELETE_ERROR": "Delete error", "CONFIRM_DELETE_COMMENT": "Are you sure?", "SAVE_ERROR": "Save error", "SAVE_COMMENT_WARNING": "This will be saved when the page is saved", "FOCUS_COMMENT": "Focus comment", "UNFOCUS_COMMENT": "Unfocus comment", "COMMENT": "Comment", "MORE_ACTIONS": "More actions", "SAVE_PAGE_TO_ADD_COMMENT": "Save the page to add this comment", "SAVE_PAGE_TO_SAVE_COMMENT_CHANGES": "Save the page to save this comment", "SAVE_PAGE_TO_SAVE_REPLY": "Save the page to save this reply", "MONTHS": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"], "WEEKDAYS": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "WEEKDAYS_SHORT": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]};
+
+            wagtailConfig.ADMIN_URLS = {
+                PAGES: '/admin/pages/'
+            };
+        })(document, window);
+    </script>
+    <script src="/static/wagtailadmin/js/vendor/jquery-3.5.1.min.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/jquery-ui-1.12.1.min.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/jquery.datetimepicker.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/jquery.autosize.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/bootstrap-transition.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/bootstrap-modal.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/bootstrap-tab.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor/tag-it.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/core.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/vendor.js?v=538cff64"></script>
+    <script src="/static/wagtailadmin/js/wagtailadmin.js?v=538cff64"></script>
+    
+
+
+
+    
+
+    
+
+<script>
+    $(function(){
+        $('form input[name=username]').trigger('focus');
+    })
+</script>
+
+
+
+    <a class="skiplink button" href="#main" data-skiplink>Skip to main content</a>
+
+    <div class="wrapper">
+       
+    <main class="content-wrapper" role="main">
+        
+
+        
+
+        <form action="/admin/login/" method="post" autocomplete="off" novalidate>
+            
+            <input type="hidden" name="csrfmiddlewaretoken" value="Tr0hYx23rIex8P8zNaMgzmnTJ84xZvVlpbafsjx6fsXJ5Qy4tfAGW6YUyDxsrjFV">
+
+            
+            <input type="hidden" name="next" value="/admin/images/41/" />
+
+            <h1>Sign in to The Horns Pub - Watford</h1>
+
+            <ul class="fields">
+                
+                <li class="full">
+                    <div class="field iconfield">
+                        <label for="id_username">Username:</label>
+                        <div class="input icon-user">
+                            <input type="text" name="username" maxlength="150" placeholder="Enter your username" required id="id_username">
+                        </div>
+                    </div>
+                </li>
+                <li class="full">
+                    <div class="field iconfield">
+                        <label for="id_password">Password:</label>
+                        <div class="input icon-password">
+                            <input type="password" name="password" placeholder="Enter password" required id="id_password">
+                        </div>
+                    </div>
+                </li>
+
+                
+                
+                
+
+                
+                
+                <li class="submit">
+                    
+                    <button type="submit" class="button button-longrunning" data-clicked-text="Signing in…"><svg class="icon icon-spinner icon" aria-hidden="true" focusable="false"><use href="#icon-spinner"></use></svg><em>Sign in</em></button>
+                    
+                </li>
+            </ul>
+
+            
+                <p class="help"><a href="/admin/password_reset/" aria-label="Reset your password">Forgotten it?</a></p>
+            
+        
+        </form>
+
+        
+
+    </main>
+
+    </div>
+</body>
+</html>

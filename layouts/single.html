@@ -1,38 +1,28 @@
+{{ define "main" }}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ .Title }}</h1>
+    </div>
+    <div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}prologue/introduction/" role="button">Get Started</a>
+      <p class="meta">Open-source MIT Licensed. <a href="https://github.com/h-enk/doks">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ define "sidebar-prefooter" }}
 
-<main>
-  {{$img := .Resources.GetMatch "cover.*"}}
-  {{ if $img }}
-  <img alt="{{.Title}}" width="1920" height="400" loading="lazy" src="{{($img.Fill "1920x400 Center").Permalink}}">
-  {{ end }}
-  {{with .Title}}
-    <h1>
-      {{.}}
-    </h1>
-  {{end}}
+{{ end }}
 
-  <div class="contact-box">
-    <div class="content">
-      {{.Content}}
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{- .Content -}}
     </div>
-
-    <form>
-        <div>
-          <label for="name">Name:</label>
-          <input id="name" name="name" type="text" required>
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div>
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" cols="50" rows="10" required></textarea>
-        </div>
-        <div>
-          <button type="submit">Send</button>
-        </div>
-    </form>
   </div>
-</main>
-{{end}}
+</section>
+{{ end }}

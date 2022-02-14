@@ -4,7 +4,10 @@
 title = "The Horns"
 titleSeparator = "-"
 titleAddition = "Live Music Venue"
-description = "."
+description = "The best live music venue in Hertfordshire."
+telephone_number = "01923 225020"
+email_address = "hornswatford@gmail.com"
+location_address = "1 Hempstead Road, Watford WD17 3RL."
 
 ## Documentation
 # docsVersion = "0.3"

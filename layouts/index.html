@@ -28,20 +28,21 @@
         {{ .Content  }}
 
 
-        <h1>From front matter  {{ site.Params.author.telephone  }}</h1>
-     
+       
+    
+    
       </div>
      
     </div>
     <div class="row justify-content-center text-center mt-lg-3">
       <div class="col-lg-5">
-        <span class="btn">{{ partialCached "telephone_number_partial" .}}</span>
+        <span class="btn">Email Address: <br>{{ partialCached "email_address_partial.html" .}}</span>
       </div>
       <div class="col-lg-5">
-        <span class="btn">Telephone: {{ partialCached "telephone_number_partial" .}}</span>
+        <span class="btn">Telephone: <br>{{ partialCached "telephone_number_partial" . }}</span>
       </div>
       <div class="col-lg-5">
-        <span class="btn">Address:</span>
+        <span class="btn">Address: <br> {{ partialCached "location_address_partial" . }}</span>
       </div>
     </div>
 
